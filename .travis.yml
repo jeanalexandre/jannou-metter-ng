@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+sudo: required
+
+notifications:
+  slack: masteriii2018:xsHaO4CZ3aUs5Z6oDfAEbWye
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng lint
+  - ng build

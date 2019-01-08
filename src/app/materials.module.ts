@@ -11,13 +11,16 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSlideToggleModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSlideToggleModule,
   MatSortModule,
   MatTableModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
-import {NgModule} from "@angular/core";
+import {NgModule} from '@angular/core';
 
 @NgModule({
   imports: [
