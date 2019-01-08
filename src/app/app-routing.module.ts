@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {LobbyComponent} from "./lobby/lobby.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from './home/home.component';
+import {LobbyComponent} from './lobby/lobby.component';
 
 const routes: Routes = [
   {
