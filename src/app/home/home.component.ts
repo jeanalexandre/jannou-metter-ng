@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {QuizService} from "../services/quiz.service";
+import {Quiz} from "../models/quiz.model";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public quiz$: Observable<Quiz>;
+
+  constructor(private quizService: QuizService) { }
 
   ngOnInit() {
+    this.quiz$ = this.quizService.refreshQuiz();
   }
 
 }
