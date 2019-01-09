@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LobbyComponent } from './lobby.component';
-import {MaterialsModule} from "../materials.module";
+import {MaterialsModule} from '../materials.module';
 
 @NgModule({
   declarations: [LobbyComponent],

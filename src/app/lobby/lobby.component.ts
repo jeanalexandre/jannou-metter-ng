@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {Quiz} from "../models/quiz.model";
-import {QuizService} from "../services/quiz.service";
-import {LocalStorageService} from "../services/local-storage.service";
-import {Router} from "@angular/router";
+import {Observable} from 'rxjs';
+import {Quiz} from '../models/quiz.model';
+import {QuizService} from '../services/quiz.service';
+import {LocalStorageService} from '../services/local-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-lobby',
