@@ -13,6 +13,7 @@ import {LocalStorageService} from '../services/local-storage.service';
 export class HomeComponent implements OnInit {
 
   public quiz$: Observable<Quiz>;
+  public idQuiz: number;
 
   constructor(private quizService: QuizService,
               private localStorageService: LocalStorageService,
@@ -22,6 +23,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.quiz$ = this.quizService.refreshQuiz();
+    this.idQuiz = this.localStorageService.findCurrentQuizId();
+    this.isIsQuiz();
+  }
+
+  isIsQuiz() {
+    this.quiz$.subscribe( quiz => {
+      if ( this.idQuiz && quiz && this.idQuiz === quiz.id) {
+        this.router.navigate(['/lobby']);
+      }
+    });
   }
 
   goToLobby(id): void {
@@ -29,6 +40,4 @@ export class HomeComponent implements OnInit {
     this.localStorageService.saveCurrentQuizId(id);
     this.router.navigate(['/lobby']);
   }
-
-
 }

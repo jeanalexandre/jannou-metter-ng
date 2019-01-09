@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Quiz} from '../models/quiz.model';
+import {QuizService} from '../services/quiz.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-presentateur',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentateurComponent implements OnInit {
 
-  constructor() { }
+  public quiz$: Observable<Quiz>;
+
+  constructor(private quizService: QuizService,
+              private router: Router,
+  ) {
+  }
 
   ngOnInit() {
+    this.quiz$ = this.quizService.refreshQuiz();
+  }
+
+  startQuiz(id) {
+    this.quizService.next(id);
+    this.router.navigate(['/ask']);
   }
 
 }
