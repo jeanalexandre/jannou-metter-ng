@@ -18,10 +18,18 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    text-align: center;
 
     .start-button {
       height: 25%;
     }
   }
+}
 
+.loader-content {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

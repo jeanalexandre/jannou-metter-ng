@@ -7,7 +7,7 @@ import {MaterialsModule} from '../materials.module';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    MaterialsModule
+    MaterialsModule,
   ]
 })
 export class HomeModule { }
