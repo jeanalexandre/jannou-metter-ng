@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {QuizService} from "../services/quiz.service";
-import {Quiz} from "../models/quiz.model";
-import {Observable} from "rxjs";
-import {Router} from "@angular/router";
-import {LocalStorageService} from "../services/local-storage.service";
+import {QuizService} from '../services/quiz.service';
+import {Quiz} from '../models/quiz.model';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
+import {LocalStorageService} from '../services/local-storage.service';
 
 @Component({
   selector: 'app-home',

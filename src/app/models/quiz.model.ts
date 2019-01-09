@@ -1,4 +1,4 @@
-import {Ask} from "./ask.model";
+import {Ask} from './ask.model';
 
 export class Quiz {
   public id?: number;

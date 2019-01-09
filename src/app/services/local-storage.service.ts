@@ -10,11 +10,11 @@ export class LocalStorageService {
   constructor() { }
 
   public findCurrentQuizId(): string {
-    return this.localStorage.getItem("quizId");
+    return this.localStorage.getItem('quizId');
   }
 
   public saveCurrentQuizId(id): void {
-    this.localStorage.setItem('quizId', id)
+    this.localStorage.setItem('quizId', id);
   }
 
   public clearLocalStorage(): void {

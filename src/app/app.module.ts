@@ -7,7 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialsModule} from './materials.module';
 import {HomeModule} from './home/home.module';
 import {LobbyModule} from './lobby/lobby.module';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
+import {PresentateurModule} from './presentateur/presentateur.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
     MaterialsModule,
     HomeModule,
     LobbyModule,
+    PresentateurModule,
   ],
   exports: [
     MaterialsModule,
