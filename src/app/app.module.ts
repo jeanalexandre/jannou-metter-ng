@@ -9,6 +9,8 @@ import {HomeModule} from './home/home.module';
 import {LobbyModule} from './lobby/lobby.module';
 import {HttpClientModule} from '@angular/common/http';
 import {PresentateurModule} from './presentateur/presentateur.module';
+import {AskModule} from './ask/ask.module';
+import {AnswerModule} from './answer/answer.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {PresentateurModule} from './presentateur/presentateur.module';
     HomeModule,
     LobbyModule,
     PresentateurModule,
+    AskModule,
+    AnswerModule,
   ],
   exports: [
     MaterialsModule,

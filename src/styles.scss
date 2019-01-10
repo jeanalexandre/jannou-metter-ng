@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body{
+body {
   margin: 0;
 
   .mat-button {
@@ -11,9 +10,17 @@ body{
     font-size: 20px;
   }
 
+  .mat-progress-bar {
+    height: 25px;
+  }
+
+  .mat-button:disabled {
+    background: #b2b2b2;
+  }
+
   font-size: 36px;
   font-weight: bold;
-  font-family: montserrat,"helvetica neue",helvetica,arial,sans-serif;
+  font-family: montserrat, "helvetica neue", helvetica, arial, sans-serif;
 
   -webkit-user-select: none; /* Safari 3.1+ */
   -moz-user-select: none; /* Firefox 2+ */
@@ -32,24 +39,51 @@ body{
 }
 
 @-webkit-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
+  0% {
+    background-position: 0% 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0% 82%
+  }
 }
+
 @-moz-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
+  0% {
+    background-position: 0% 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0% 82%
+  }
 }
+
 @-o-keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
+  0% {
+    background-position: 0% 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0% 82%
+  }
 }
+
 @keyframes rainbow {
-  0%{background-position:0% 82%}
-  50%{background-position:100% 19%}
-  100%{background-position:0% 82%}
+  0% {
+    background-position: 0% 82%
+  }
+  50% {
+    background-position: 100% 19%
+  }
+  100% {
+    background-position: 0% 82%
+  }
 }
 
 .loader {
