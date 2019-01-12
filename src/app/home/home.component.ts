@@ -24,10 +24,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.quiz$ = this.quizService.refreshQuiz();
     this.idQuiz = this.localStorageService.findCurrentQuizId();
-    this.isIsQuiz();
+    this.isInQuiz();
   }
 
-  isIsQuiz() {
+  isInQuiz() {
     this.quiz$.subscribe( quiz => {
       if ( this.idQuiz && quiz && this.idQuiz === quiz.id) {
         this.router.navigate(['/lobby']);

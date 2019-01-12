@@ -1,0 +1,77 @@
+.ask-content {
+  width: 100vw;
+  height: 100vh;
+  background: whitesmoke;
+  color: black;
+
+  .title {
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .answers {
+    width: 95%;
+    height: 85vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .answerRep {
+      width: 45%;
+      margin: 3px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .two-rep {
+      height: 100%;
+    }
+
+    .more-than-three {
+      height: 50%;
+    }
+
+    .more-than-five {
+      height: 33%;
+    }
+
+    .color-00 {
+      background: #1567d1;
+    }
+
+    .color-10 {
+      background: #e51a40;
+    }
+
+    .color-20 {
+      background: #e99900;
+    }
+
+    .color-30 {
+      background: #00be27;
+    }
+
+    .color-40 {
+      background: #8f52c1;
+    }
+
+    .color-50 {
+      background: #00cccc;
+    }
+  }
+}
+
+.loader-content {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -21,6 +21,15 @@ export class LobbyComponent implements OnInit {
 
   ngOnInit() {
     this.quiz$ = this.quizService.refreshQuiz();
+    this.ifQuizzStarted();
+  }
+
+  ifQuizzStarted() {
+    this.quiz$.subscribe( quiz => {
+      if ( quiz && quiz.state === 'InProgress') {
+        this.router.navigate(['/answer']);
+      }
+    });
   }
 
   leaveLobby(id): void {

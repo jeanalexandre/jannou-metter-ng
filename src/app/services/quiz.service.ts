@@ -14,7 +14,7 @@ export class QuizService {
   }
 
   refreshQuiz(): Observable<Quiz> {
-    return merge(interval(500), of('')).pipe(
+    return merge(interval(1000), of('')).pipe(
       switchMap(() => this.httpClient.get<Quiz>(`${environment.apiBaseUrl}/quizz`)),
       map(array => array[0]),
       share(),
@@ -24,17 +24,17 @@ export class QuizService {
   }
 
   subscribe(id): void {
-    this.httpClient.post(`${environment.apiBaseUrl}/quizz/${id}/subscribe`, '').subscribe(result => {
+    this.httpClient.get(`${environment.apiBaseUrl}/quizz/${id}/subscribe`).subscribe(result => {
     });
   }
 
   unsubscribe(id): void {
-    this.httpClient.post(`${environment.apiBaseUrl}/quizz/${id}/unsubscribe`, '').subscribe(result => {
+    this.httpClient.get(`${environment.apiBaseUrl}/quizz/${id}/unsubscribe`).subscribe(result => {
     });
   }
 
   next(id): void {
-    this.httpClient.post(`${environment.apiBaseUrl}/quizz/${id}/next`, '').subscribe(result => {
+    this.httpClient.get(`${environment.apiBaseUrl}/quizz/${id}/next`).subscribe(result => {
     });
   }
 }

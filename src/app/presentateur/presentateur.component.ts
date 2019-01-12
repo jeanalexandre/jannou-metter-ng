@@ -20,6 +20,15 @@ export class PresentateurComponent implements OnInit {
 
   ngOnInit() {
     this.quiz$ = this.quizService.refreshQuiz();
+    this.ifQuizzInProgress();
+  }
+
+  ifQuizzInProgress() {
+    this.quiz$.subscribe( quiz => {
+      if ( quiz && quiz.state === 'InProgress') {
+        this.router.navigate(['/ask']);
+      }
+    });
   }
 
   startQuiz(id) {

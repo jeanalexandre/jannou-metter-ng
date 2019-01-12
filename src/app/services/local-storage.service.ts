@@ -13,6 +13,14 @@ export class LocalStorageService {
     return +this.localStorage.getItem('quizId');
   }
 
+  public findLastAskRep(): number {
+    return +this.localStorage.getItem('lastAskRep');
+  }
+
+  public saveLastAskRep(id): void {
+    this.localStorage.setItem('lastAskRep', id);
+  }
+
   public saveCurrentQuizId(id): void {
     this.localStorage.setItem('quizId', id);
   }

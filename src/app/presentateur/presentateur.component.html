@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="form-content">
-    <button class="start-button" mat-button (click)="startQuiz(quiz.id)">DEMARRER LE QUIZ</button>
+    <button class="start-button" [disabled]="!quiz.nbContributors" mat-button (click)="startQuiz(quiz.id)">DEMARRER LE QUIZ</button>
   </div>
 </div>
 <ng-template #loading>
