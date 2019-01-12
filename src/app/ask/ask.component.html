@@ -1,15 +1,37 @@
-<div class="ask-content" *ngIf="quiz$ | async as quiz; else loading">
-  <div *ngIf="showAnswers" class="poll-counter">{{quiz.asks[quiz.currentAsk].total_polling}} Réponses</div>
-  <button *ngIf="showAnswers" class="timer" mat-fab>{{timeLeft2}}</button>
-  <div class="header" *ngIf="!showAnswers">
-    <h1>Question {{quiz.currentAsk}} / {{quiz.asks.length}}</h1>
-    <mat-progress-bar mode="determinate" value="{{100 - (timeLeft / 4 * 100)}}"></mat-progress-bar>
+<div class="ask-content" *ngIf="ask && quiz$ | async as quiz; else loading">
+  <div class="result-charts" *ngIf="ask.state === 'Done'">
+    <button mat-button class="next-btn" (click)="next(quiz.id)" color="primary">Question suivante</button>
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="getResultFor(ask)"
+      [gradient]="gradient"
+      [showGridLines]="showGridLine"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showDataLabel]="showDataLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
   </div>
-  <div class="ask">
-    <div>{{quiz.asks[quiz.currentAsk].entitled}}</div>
-  </div>
-  <div class="answers" *ngIf="showAnswers">
-    <button disabled mat-button class="answerRep {{'color-' + i++ + ''}}" *ngFor="let answer of quiz.asks[quiz.currentAsk].answers; let i = index" (click)="onClick">{{answer.entitled}}</button>
+  <div class="ask-sub-content" *ngIf="ask.state !== 'Done'">
+    <div *ngIf="showAnswers" class="poll-counter">{{ask.total_polling}} Réponses</div>
+    <button *ngIf="showAnswers" class="timer" mat-fab>{{timeLeft2}}</button>
+    <div class="header" *ngIf="!showAnswers">
+      <h1>Question {{quiz.currentAsk}} / {{quiz.asks.length}}</h1>
+      <mat-progress-bar mode="determinate" value="{{100 - (timeLeft / 4 * 100)}}"></mat-progress-bar>
+    </div>
+    <div class="ask">
+      <div>{{ask.entitled}}</div>
+    </div>
+    <div class="answers" *ngIf="showAnswers">
+      <button disabled mat-button class="answerRep {{'color-' + i++ + ''}}"
+              *ngFor="let answer of ask.answers; let i = index" (click)="onClick">{{answer.entitled}}</button>
+    </div>
   </div>
 </div>
 <ng-template #loading>

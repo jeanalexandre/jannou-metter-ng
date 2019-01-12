@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {PresentateurModule} from './presentateur/presentateur.module';
 import {AskModule} from './ask/ask.module';
 import {AnswerModule} from './answer/answer.module';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import {AnswerModule} from './answer/answer.module';
     PresentateurModule,
     AskModule,
     AnswerModule,
+    NgxChartsModule,
+
   ],
   exports: [
     MaterialsModule,
@@ -34,4 +37,5 @@ import {AnswerModule} from './answer/answer.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
