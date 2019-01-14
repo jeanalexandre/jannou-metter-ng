@@ -1,12 +1,11 @@
 <div class="home-content" *ngIf="quiz$ | async as quiz; else loading">
-  <div class="title">{{quiz.name}}</div>
-  <div class="form-content" *ngIf="quiz.state === 'ToDo'; else quizzDone">
+  <div class="form-content" *ngIf="quiz.state !== 'Done'; else quizzDone">
+    <div class="title">{{quiz.name}}</div>
     <button class="start-button" mat-button (click)="goToLobby(quiz.id)">PARTICIPER AU SONDAGE</button>
   </div>
 </div>
-
 <ng-template #quizzDone>
-  <div class="form-content">Quizz non disponible</div>
+  <div class="form-content">Quiz non disponible</div>
 </ng-template>
 <ng-template #loading>
   <div class="loader-content">

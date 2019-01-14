@@ -12,6 +12,9 @@ import {PresentateurModule} from './presentateur/presentateur.module';
 import {AskModule} from './ask/ask.module';
 import {AnswerModule} from './answer/answer.module';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {EmailModule} from './email/email.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     BrowserAnimationsModule,
     MaterialsModule,
     HomeModule,
@@ -28,8 +32,10 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     PresentateurModule,
     AskModule,
     AnswerModule,
+    EmailModule,
     NgxChartsModule,
-
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     MaterialsModule,
