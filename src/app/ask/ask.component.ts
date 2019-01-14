@@ -64,6 +64,14 @@ export class AskComponent implements OnInit {
     this.startTimer();
   }
 
+  public end(id): void {
+    this.quizService.next(id);
+  }
+
+  public resetQuiz(): void {
+    this.quizService.reset();
+  }
+
   private setDone(): void {
     this.resetTimers();
     this.getResultFor(this.ask);
@@ -72,9 +80,13 @@ export class AskComponent implements OnInit {
 
   private setAsk() {
     this.quiz$.subscribe(quiz => {
-      this.ask = quiz.asks.find(ask => ask.sort_order === quiz.currentAsk);
-      if (this.ask.state === 'Done') {
-        this.getResultFor(this.ask);
+      if (quiz.state !== 'ToDo') {
+        this.ask = quiz.asks.find(ask => ask.sort_order === quiz.currentAsk);
+        if (this.ask.state === 'Done') {
+          this.getResultFor(this.ask);
+        }
+      } else {
+        this.router.navigate(['/presentateur']);
       }
     });
   }
@@ -96,7 +108,7 @@ export class AskComponent implements OnInit {
       if (this.timeLeft2 > 0 && this.ask.state !== 'Done') {
         this.timeLeft2--;
       } else {
-          this.setDone();
+        this.setDone();
       }
     }, 1000);
   }

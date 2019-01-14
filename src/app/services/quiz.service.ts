@@ -37,4 +37,9 @@ export class QuizService {
     this.httpClient.get(`${environment.apiBaseUrl}/quizz/${id}/next`).subscribe(result => {
     });
   }
+
+  reset(): void {
+    this.httpClient.get(`${environment.apiBaseUrl}/quizz/reset`).subscribe(result => {
+    });
+  }
 }

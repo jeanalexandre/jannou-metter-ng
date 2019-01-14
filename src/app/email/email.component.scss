@@ -1,0 +1,21 @@
+.email-form {
+  width: 100vw;
+  height: 100vh;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: #4054af;
+  font-size: 16px;
+
+  .full-width {
+    width: 95%;
+  }
+
+  .submit-button {
+    width: 80%;
+    margin: 5px;
+  }
+}

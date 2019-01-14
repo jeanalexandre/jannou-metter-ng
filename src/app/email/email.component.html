@@ -1,0 +1,13 @@
+<form [formGroup]="emailForm" class="email-form" (ngSubmit)="onSubmit()">
+  <p>Si vous souhaitez rester informer sur le produit, renseignez votre e-mail ci-dessous</p>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Adresse e-mail</mat-label>
+    <input matInput type="text" formControlName="email" required>
+    <mat-error *ngIf="email.invalid">Veuillez saisir une adresse mail valide</mat-error>
+  </mat-form-field>
+  <button class="submit-button" mat-raised-button color="primary" type="submit"
+          [disabled]="email.invalid">Envoyer mon mail
+  </button>
+  <button class="submit-button" mat-raised-button color="primary">Retour à l'accueil
+  </button>
+</form>

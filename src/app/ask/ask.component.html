@@ -1,7 +1,7 @@
 <div class="ask-content" *ngIf="ask && quiz$ | async as quiz; else loading">
-  <div class="result-charts" *ngIf="ask.state === 'Done'">
+  <div class="result-charts" *ngIf="quiz.state !== 'Done' && ask.type !== 'FreeString' && ask.state === 'Done'">
     <div class="details-result" *ngIf="resultAsk; else loading">
-      <button mat-button class="next-btn" (click)="next(quiz.id)" color="primary">Question suivante</button>
+      <button mat-button class="next-btn" *ngIf="quiz.currentAsk !== quiz.asks.length; else endOfQuiz" (click)="next(quiz.id)" color="primary">Question suivante</button>
       <ngx-charts-bar-vertical
         [view]="view"
         [scheme]="colorScheme"
@@ -20,6 +20,16 @@
       </ngx-charts-bar-vertical>
     </div>
   </div>
+  <div class="result-charts" *ngIf="quiz.state !== 'Done' && ask.type === 'FreeString' && ask.state === 'Done'">
+    <button mat-button class="next-btn" *ngIf="quiz.currentAsk !== quiz.asks.length; else endOfQuiz" (click)="next(quiz.id)" color="primary">Question suivante</button>
+    Le mot le plus renseigné est :
+    <div class="more-result-word">BRAVO</div>
+  </div>
+  <div class="result-charts" *ngIf="quiz.state === 'Done'">
+    <button mat-button class="next-btn" (click)="resetQuiz()" color="primary">Réinitialiser</button>
+    Merci pour votre participation !
+    <div class="more-result-word"><mat-icon>sentiment_satisfied_alt</mat-icon></div>
+  </div>
   <div class="ask-sub-content" *ngIf="ask.state !== 'Done'">
     <div *ngIf="showAnswers" class="poll-counter">{{ask.total_polling}} Réponses</div>
     <button *ngIf="showAnswers" class="timer" mat-fab>{{timeLeft2}}</button>
@@ -30,7 +40,7 @@
     <div class="ask">
       <div>{{ask.entitled}}</div>
     </div>
-    <div class="answers" *ngIf="showAnswers">
+    <div class="answers" *ngIf="showAnswers && ask.type !== 'FreeString'">
       <button disabled mat-button class="answerRep {{'color-' + i++ + ''}}"
               *ngFor="let answer of ask.answers; let i = index" (click)="onClick">{{answer.entitled}}</button>
     </div>
@@ -39,5 +49,11 @@
 <ng-template #loading>
   <div class="loader-content">
     <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+</ng-template>
+
+<ng-template #endOfQuiz>
+  <div *ngIf="ask && quiz$ | async as quiz">
+    <button mat-button class="next-btn" (click)="end(quiz.id)" color="primary">Terminer</button>
   </div>
 </ng-template>

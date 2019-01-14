@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AnswerComponent } from './answer.component';
+import { EmailComponent } from './email.component';
 import {MaterialsModule} from '../materials.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [AnswerComponent],
+  declarations: [EmailComponent],
   imports: [
     CommonModule,
     MaterialsModule,
@@ -13,4 +13,4 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
   ]
 })
-export class AnswerModule { }
+export class EmailModule { }

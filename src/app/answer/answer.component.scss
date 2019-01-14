@@ -75,3 +75,24 @@
   align-items: center;
   text-align: center;
 }
+
+.free-string-form {
+  width: 100vw;
+  height: 100vh;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: #4054af;
+
+  .full-width {
+    width: 95%;
+  }
+
+  .submit-button {
+    font-size: 36px;
+    width: 80%;
+  }
+}
